@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function TodoItem() {
-    return <li>todo</li>
+export default function TodoItem({record, index}) {
+    return <li><strong>{index +1}</strong> {record.content}  </li>
 }

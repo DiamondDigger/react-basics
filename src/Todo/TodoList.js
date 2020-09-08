@@ -9,12 +9,12 @@ const styles = {
     }
 }
 
-export default function TodoList() {
+export default function TodoList(props) {
     return (
         <ul style={styles.ul}>
-            <TodoItem></TodoItem>
-            <TodoItem></TodoItem>
-            <TodoItem></TodoItem>
+            {props.data.map((item, index) => {
+                return <TodoItem record={item} key={item.id} index={index}/>
+            })}
         </ul>
     )
 }
