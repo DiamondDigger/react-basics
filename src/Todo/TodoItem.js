@@ -22,10 +22,11 @@ function TodoItem({record, index}) {
             <span>
                 <input type="checkbox" style={styles.input}/>
                 <strong>{index + 1}</strong>
+                &nbsp;
                 {record.content}
             </span>
 
-            <button>&times;</button>
+            <button className="rm">&times;</button>
         </li>
     )
 }
