@@ -16,11 +16,12 @@ const styles = {
     }
 }
 
-function TodoItem({record, index}) {
+
+function TodoItem({record, index, funcFromTodoList}) {
     return (
         <li style={styles.li}>
             <span>
-                <input type="checkbox" style={styles.input} onChange={() => console.log(record.content + ' ' + record.id)}/>
+                <input type="checkbox" style={styles.input} onChange={funcFromTodoList(`${record.content} - ${record.id}`)}/>
                 <strong>{index + 1}</strong>
                 &nbsp;
                 {record.content}
@@ -33,7 +34,8 @@ function TodoItem({record, index}) {
 
 TodoItem.propTypes = {
     record: PropTypes.object.isRequired,
-    index: PropTypes.number
+    index: PropTypes.number,
+    funcFromTodoList: PropTypes.func.isRequired
 }
 
 export default TodoItem
