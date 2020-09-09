@@ -20,7 +20,7 @@ function TodoItem({record, index}) {
     return (
         <li style={styles.li}>
             <span>
-                <input type="checkbox" style={styles.input}/>
+                <input type="checkbox" style={styles.input} onChange={() => console.log(record.content + ' ' + record.id)}/>
                 <strong>{index + 1}</strong>
                 &nbsp;
                 {record.content}
