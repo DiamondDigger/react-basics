@@ -21,7 +21,7 @@ function TodoItem({record, index, funcFromTodoList}) {
     return (
         <li style={styles.li}>
             <span>
-                <input type="checkbox" style={styles.input} onChange={funcFromTodoList(`${record.content} - ${record.id}`)}/>
+                <input type="checkbox" style={styles.input} onChange={funcFromTodoList(record.id, record.content)}/>
                 <strong>{index + 1}</strong>
                 &nbsp;
                 {record.content}
