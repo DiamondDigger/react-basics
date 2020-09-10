@@ -1,15 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TodoList from "./Todo/TodoList";
 
 function App() {
-    const data = [
+    let initData = [
         {id: 1, completed: false, content: 'купить запчасти'},
         {id: 2, completed: false, content: 'собрать робота'},
-        {id: 3, completed: false, content: 'захватить мир'}
-    ]
+        {id: 3, completed: false, content: 'захватить мир'}]
+
+    const [data, setData] = React.useState(initData)
 
     function onToggle(content, id){
-        console.log(content, id)
+        setData(data.map(
+            (element) => {
+                if (element.id === id){
+                    element.completed = !element.completed
+                }
+                return element
+            })
+        )
     }
 
   return (
