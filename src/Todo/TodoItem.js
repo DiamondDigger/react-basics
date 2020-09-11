@@ -18,6 +18,7 @@ const styles = {
 
 
 function TodoItem({record, index, funcFromTodoList}) {
+    console.log('from TodoItem ->', record)
     return (
         <li style={styles.li}>
             <span>

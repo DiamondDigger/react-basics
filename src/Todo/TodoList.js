@@ -11,7 +11,7 @@ const styles = {
 }
 
 function TodoList(props) {
-    console.log(props.data)
+    console.log('from TodoList -> ',props.data)
     return (
         <ul style={styles.ul}>
             {props.data.map((item, index) => {
