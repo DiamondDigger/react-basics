@@ -26,7 +26,7 @@ function App() {
             <h1>radio React ive </h1>
 
             <TodoList data={data} funcFromApp={onToggle}/>
-            <h2>{console.log(data)}</h2>
+            {/*<h2>{console.log(data)}</h2>*/}
         </div>
     );
 }
