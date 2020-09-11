@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import TodoList from "./Todo/TodoList";
+import {element} from "prop-types";
 
 function App() {
     let initData = [
@@ -9,10 +10,10 @@ function App() {
 
     const [data, setData] = React.useState(initData)
 
-    function onToggle(content, id){
-        setData(data.map(
-            (element) => {
-                if (element.id === id){
+    function onToggle(id) {
+        setData(
+            data.map(element => {
+                if (element.id === id) {
                     element.completed = !element.completed
                 }
                 return element
@@ -20,13 +21,13 @@ function App() {
         )
     }
 
-  return (
-    <div className='wrapper'>
-      <h1>radio React ive </h1>
+    return (
+        <div className='wrapper'>
+            <h1>radio React ive </h1>
 
-      <TodoList data={data} funcFromApp={onToggle} />
-    </div>
-  );
+            <TodoList data={data} funcFromApp={onToggle}/>
+        </div>
+    );
 }
 
 export default App;
