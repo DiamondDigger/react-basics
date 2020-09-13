@@ -19,9 +19,15 @@ const styles = {
 
 function TodoItem({record, index, funcFromTodoList}) {
     console.log('from TodoItem ->', record)
+
+    const classes = []
+
+    if (record.completed) {
+        classes.push('done')
+    }
     return (
         <li style={styles.li}>
-            <span>
+            <span className={classes.join(' ')}>
                 <input type="checkbox" style={styles.input}
                        onChange={() => funcFromTodoList(record.id)}/>
                 <strong>{index + 1}</strong>
@@ -31,7 +37,7 @@ function TodoItem({record, index, funcFromTodoList}) {
 
             <button className="rm">&times;</button>
         </li>
-    )
+    );
 }
 
 TodoItem.propTypes = {
