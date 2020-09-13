@@ -28,7 +28,7 @@ function TodoItem({record, index, funcFromTodoList}) {
     return (
         <li style={styles.li}>
             <span className={classes.join(' ')}>
-                <input type="checkbox" style={styles.input}
+                <input type="checkbox" style={styles.input} checked={record.completed}
                        onChange={() => funcFromTodoList(record.id)}/>
                 <strong>{index + 1}</strong>
                 &nbsp;

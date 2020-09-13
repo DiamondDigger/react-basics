@@ -4,9 +4,9 @@ import {element} from "prop-types";
 
 function App() {
     let initData = [
-        {id: 1, completed: false, content: 'купить запчасти'},
+        {id: 1, completed: true, content: 'купить запчасти'},
         {id: 2, completed: false, content: 'собрать робота'},
-        {id: 3, completed: false, content: 'захватить мир'}]
+        {id: 3, completed: true, content: 'захватить мир'}]
 
     const [data, setData] = React.useState(initData)
 
