@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import TodoList from "./Todo/TodoList";
-import {element} from "prop-types";
+import Context from "./context";
 
 function App() {
     let initData = [
@@ -21,13 +21,19 @@ function App() {
         )
     }
 
+    function removeTodoItem(id) {
+        setData(data.filter(el => el.id !== id))
+    }
+
     return (
+        <Context.Provider value={{removeTodoItem}}>
         <div className='wrapper'>
             <h1>radio React ive </h1>
 
             <TodoList data={data} funcFromApp={onToggle}/>
             {/*<h2>{console.log(data)}</h2>*/}
         </div>
+        </Context.Provider>
     );
 }
 

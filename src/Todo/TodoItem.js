@@ -16,7 +16,6 @@ const styles = {
     }
 }
 
-
 function TodoItem({record, index, funcFromTodoList}) {
     console.log('from TodoItem ->', record)
 
