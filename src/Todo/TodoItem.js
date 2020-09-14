@@ -36,7 +36,7 @@ function TodoItem({record, index, funcFromTodoList}) {
                 {record.content}
             </span>
 
-            <button className="rm" onClick={removeTodoItem(record.id)}>&times;</button>
+            <button className="rm" onClick={removeTodoItem.bind(null,record.id)}>&times;</button>
         </li>
     );
 }
