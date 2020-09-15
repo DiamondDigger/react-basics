@@ -10,6 +10,10 @@ function App() {
 
     const [data, setData] = React.useState(initData)
 
+    let initDay = { day: 'true' }
+
+    const [day, setDay] = React.useState(initDay)
+
     function onToggle(id) {
         setData(
             data.map(element => {
@@ -25,8 +29,18 @@ function App() {
         setData(data.filter(el => el.id !== id))
     }
 
+    function changeBackImg() {
+        setDay(day.map((record) => {
+                if (record.day){
+                    record.day = !record.day
+                }
+            } )
+        )
+        console.log('img have been changed')
+    }
+
     return (
-        <Context.Provider value={{removeTodoItem}}>
+        <Context.Provider value={{removeTodoItem, changeBackImg}}>
         <div className='wrapper'>
             <h1>radio React ive </h1>
 
