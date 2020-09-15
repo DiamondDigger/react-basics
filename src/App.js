@@ -29,8 +29,10 @@ function App() {
         <Context.Provider value={{removeTodoItem}}>
             <div className='wrapper'>
                 <h1>radio React ive </h1>
-
-                <TodoList data={data} funcFromApp={onToggle}/>
+                { data.length
+                    ? <TodoList data={data} funcFromApp={onToggle}/>
+                    : <h2>Ooopps..We have no todos for you, buddy!</h2>
+                }
                 {/*<h2>{console.log(data)}</h2>*/}
             </div>
         </Context.Provider>
