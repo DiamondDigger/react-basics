@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import Clock from './Clock';
 import * as serviceWorker from './serviceWorker';
-import Background from './Background'
+import Background from "./Background";
 
 ReactDOM.render(
     <React.StrictMode>
