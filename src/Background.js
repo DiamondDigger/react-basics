@@ -2,7 +2,8 @@ import React, {useContext, useState} from "react";
 
 const styles = {
     img: {
-        width: 'auto',
+        width: '600px',
+        height: '300px',
         margin: 'auto',
         display: 'block'
     }
@@ -22,7 +23,7 @@ function Background() {
                 onClick={() => setDay(
                     day = !day
                 )}
-                src={ day ? link = dayImgLink : link = nightImgLink}
+                src={day ? link = dayImgLink : link = nightImgLink}
                 style={styles.img}
                 alt="should be an image here"/>
         </div>
