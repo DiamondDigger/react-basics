@@ -1,3 +1,5 @@
+<img src='https://www.educative.io/api/page/6018530514305024/image/download/5753173610332160'>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
