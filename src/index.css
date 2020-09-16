@@ -27,6 +27,11 @@ code {
   text-decoration: line-through;
 }
 
+.inputForm {
+  display: block;
+  margin: auto;
+}
+
 .rm {
   background: red;
   color: white;

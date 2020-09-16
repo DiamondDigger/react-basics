@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import TodoList from "./Todo/TodoList";
 import Context from "./context";
+import AddTodo from "./Todo/AddTodo";
 
 function App() {
     let initData = [
@@ -29,9 +30,10 @@ function App() {
         <Context.Provider value={{removeTodoItem}}>
             <div className='wrapper'>
                 <h1>radio React ive </h1>
-                { data.length
+                {data.length
                     ? <TodoList data={data} funcFromApp={onToggle}/>
-                    : <h2>Ooopps..We have no todos for you, buddy!</h2>
+                    : (<h2>Ooopps..We have no todos for you, buddy!</h2>,
+                        <AddTodo/>)
                 }
                 {/*<h2>{console.log(data)}</h2>*/}
             </div>
