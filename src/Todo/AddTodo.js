@@ -12,6 +12,7 @@ function AddTodo({onCreate}) {
 
             onCreate(value)
             console.log('value was created: ', value)
+            setValue( '')
         }
     }
 
