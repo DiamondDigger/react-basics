@@ -26,6 +26,7 @@ function App() {
         setData(data.filter(el => el.id !== id))
     }
 
+
     function addTodo(value) {
         setData(
             data.concat([{
