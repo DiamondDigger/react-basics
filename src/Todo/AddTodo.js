@@ -1,16 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
+import PropType from 'prop-types'
 
-const styles = {
-    input: {}
+function AddTodo({onCreate}) {
+
+    const [value, setValue] = useState('')
+
+    function submitHandler(event) {
+        event.preventDefault()
+
+        if (value.trim()) {
+
+            onCreate(value)
+            console.log('value was created: ', value)
+        }
+    }
+
+    return (
+        <form className='inputForm' onSubmit={submitHandler}>
+            <input type="text"
+                   value={value}
+                   onChange={event =>
+                       setValue(event.target.value)}/>
+            <button type='submit'>Add Todo</button>
+        </form>
+    )
 }
 
-function AddTodo() {
-    return (
-        <div className='inputForm'>
-            <input type="text" style={styles.input}/>
-            <button type='submit'>Add Todo</button>
-        </div>
-    )
+AddTodo.propType = {
+    onCreate: PropType.func.isRequired
 }
 
 export default AddTodo
