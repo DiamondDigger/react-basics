@@ -17,11 +17,14 @@ export default class Modal extends React.Component {
                 (<div className='modal'>
                     <div className='modal-body'>
                         <h2>{this.state.title}</h2>
-                        <input type="text" onChange={(event)=> this.setState({title: event.target.value})}/>
+                        <input type="text"
+                               onChange={(event)=> this.setState({title: event.target.value})}/>
 
                         <p>{this.state.info}</p>
-                        <input type="text" onChange={(event) => this.setState({info: event.target.value})}/>
-                        <button onClick={() => this.setState({turnOn: false})} >Close modal</button>
+                        <input type="text"
+                               onChange={(event) => this.setState({info: event.target.value})}/>
+                        <button style={{display: 'block', marginTop: '1rem'}}
+                                onClick={() => this.setState({turnOn: false})} >Close modal</button>
                     </div>
                 </div>)
                 }
