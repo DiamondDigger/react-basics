@@ -3,21 +3,21 @@ import TodoList from "./Todo/TodoList";
 import Context from "./context";
 import Loader from "./Loader";
 
+const AddTodo = React.lazy(() => new Promise(resolve => {
+    setTimeout(() => {
+        resolve(import('./Todo/AddTodo'))
+    }, 2000)
+}))
+
 function App() {
     let initData = [
         {id: 1, completed: true, title: 'купить запчасти'},
         {id: 2, completed: false, title: 'собрать робота'},
         {id: 3, completed: true, title: 'захватить мир'}]
 
-    let [data, setData] = React.useState([])
+    const [data, setData] = React.useState([])
 
     const [loading, setLoading] = useState(true)
-
-    const AddTodo = React.lazy(() => new Promise(resolve => {
-        setTimeout(() => {
-            resolve(import('./Todo/AddTodo'))
-        }, 2000)
-    }))
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
@@ -30,7 +30,6 @@ function App() {
                     , 3000)
             )
     }, [])
-
 
     function onToggle(id) {
         setData(
@@ -46,7 +45,6 @@ function App() {
     function removeTodoItem(id) {
         setData(data.filter(el => el.id !== id))
     }
-
 
     function addTodo(value) {
         setData(
