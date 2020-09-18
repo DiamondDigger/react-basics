@@ -50,7 +50,7 @@ code {
   position: absolute;
   width: 6px;
   height: 6px;
-  background: #dfc;
+  background: mediumvioletred;
   border-radius: 50%;
   animation: lds-default 1.2s linear infinite;
 }
