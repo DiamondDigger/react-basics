@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import PropType from 'prop-types'
+import Modal from "../Modal/Modal";
 
 function useInputValue() {
     const [value, setValue] = useState( '')
@@ -29,10 +30,12 @@ function AddTodo({onCreate}) {
     }
 
     return (
-        <form className='inputForm' onSubmit={submitHandler}>
-            <input type="text" {...input.bind} />
-            <button type='submit'>Add Todo</button>
-        </form>
+        <div>
+            <form className='inputForm' onSubmit={submitHandler}>
+                <input type="text" {...input.bind} />
+                <button type='submit'>Add Todo</button>
+            </form>
+        </div>
     )
 }
 
