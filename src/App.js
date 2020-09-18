@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import TodoList from "./Todo/TodoList";
 import Context from "./context";
 import Loader from "./Loader";
+import Modal from "./Modal/Modal";
 
 const AddTodo = React.lazy(() => new Promise(resolve => {
     setTimeout(() => {
@@ -60,6 +61,8 @@ function App() {
         <Context.Provider value={{removeTodoItem}}>
             <div className='wrapper'>
                 <h1>radio React ive </h1>
+
+                <Modal />
                 <React.Suspense fallback={<p>Please wait, component is loading...</p>}>
                     <AddTodo onCreate={addTodo}/>
                 </React.Suspense>
