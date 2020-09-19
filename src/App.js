@@ -60,7 +60,7 @@ function App() {
     }
 
     return (
-        <Context.Provider value={{removeTodoItem}}>
+        <Context.Provider value={{removeTodoItem,addTodo}}>
             <div className='wrapper'>
                 <h1>radio React ive </h1>
 
