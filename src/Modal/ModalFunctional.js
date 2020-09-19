@@ -2,13 +2,13 @@ import React, {useState} from "react";
 import './Modal.css'
 
 function ModalFunctional(props) {
-    const titleFromAddTodo = props.title
-    const infoFromAddTodo = props.info
-    console.log(titleFromAddTodo)
-    console.log(infoFromAddTodo)
-    const [title,setTitle] = useState(titleFromAddTodo)
-    const [info,setInfo] = useState(infoFromAddTodo)
+    console.log('props.title: ', props.title)
+    console.log('props.info: ', props.info)
+    const [title,setTitle] = useState(props.title)
+    const [info,setInfo] = useState(props.info)
     const [isOpen, setIsOpen] = useState(false)
+    console.log('title: ', title)
+    console.log('info: ', info)
 
     return (
         <React.Fragment>

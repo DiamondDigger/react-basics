@@ -5,7 +5,7 @@ import ModalFunctional from "./Modal/ModalFunctional";
 
 function AddTodoCard() {
     return(
-        <ModalFunctional data={{title: 'title from card', info: 'info from card'}}/>
+        <ModalFunctional title={'title from card'} info={'info from card'}/>
     )
 }
 

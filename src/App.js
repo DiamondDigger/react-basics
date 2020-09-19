@@ -64,7 +64,7 @@ function App() {
             <div className='wrapper'>
                 <h1>radio React ive </h1>
 
-                <ModalFunctional/>
+                <AddTodoCard/>
                 <p>another one</p>
                 <React.Suspense fallback={<p>Please wait, component is loading...</p>}>
                     <AddTodo onCreate={addTodo}/>
