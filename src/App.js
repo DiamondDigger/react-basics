@@ -3,6 +3,8 @@ import TodoList from "./Todo/TodoList";
 import Context from "./context";
 import Loader from "./Loader";
 import Modal from "./Modal/Modal";
+import AddTodoCard from "./AddTodoCard";
+import ModalFunctional from "./Modal/ModalFunctional";
 
 const AddTodo = React.lazy(() => new Promise(resolve => {
     setTimeout(() => {
@@ -62,7 +64,8 @@ function App() {
             <div className='wrapper'>
                 <h1>radio React ive </h1>
 
-                <Modal />
+                <ModalFunctional/>
+                <p>another one</p>
                 <React.Suspense fallback={<p>Please wait, component is loading...</p>}>
                     <AddTodo onCreate={addTodo}/>
                 </React.Suspense>

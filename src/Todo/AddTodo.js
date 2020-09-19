@@ -6,6 +6,7 @@ import '../Modal/Modal.css'
 function useInputValue() {
     const [value, setValue] = useState( '')
     const [info, setInfo] = useState('Some description should be here')
+    const [isOpen, setIsOpen] = useState(false)
     return {
         bindValue: {
             value,
@@ -15,9 +16,14 @@ function useInputValue() {
             info,
             onChange: (event) => setInfo(event.target.value)
         },
+        bindIsOpen: {
+            isOpen,
+            onClick: () => setIsOpen(!isOpen)
+        },
         clear: () => setValue(''),
         value: () => value,
-        info: () => info
+        info: () => info,
+        isOpen: () => isOpen
     }
 }
 
@@ -37,15 +43,10 @@ function AddTodo({onCreate}) {
 
     return (
         <div>
-            <form className='inputForm' onSubmit={submitHandler}>
-                <input type="text" {...input.bindValue} />
-                <button type='submit'>Add Todo</button>
-            </form>
 
-            <React.Fragment>
-                <button onClick={this.setState({turnOn: true})}>Open modal</button>
+                <button onClick={input.bindIsOpen.onClick}>Open modal</button>
 
-                {this.state.turnOn &&
+                {input.isOpen() &&
                 (<div className='modal'>
                     <div className='modal-body'>
                         <h2>{input.value}</h2>
@@ -54,11 +55,10 @@ function AddTodo({onCreate}) {
                         <p>{input.info}</p>
                         <input type="text" {...input.bindInfo} />
                         <button style={{display: 'block', marginTop: '1rem'}}
-                                onClick={() => this.setState({turnOn: false})} >Close modal</button>
+                                onClick={input.bindIsOpen.onClick} >Save and Close</button>
                     </div>
                 </div>)
                 }
-            </React.Fragment>
 
         </div>
     )

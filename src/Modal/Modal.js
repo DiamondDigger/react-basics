@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useContext} from "react";
 import './Modal.css'
+import Context from '../context'
 
 export default class Modal extends React.Component {
     state = {
@@ -10,6 +11,7 @@ export default class Modal extends React.Component {
 
     render() {
         return (
+
             <React.Fragment>
                 <button onClick={() => this.setState({turnOn: true})}>Open modal</button>
 
@@ -29,6 +31,7 @@ export default class Modal extends React.Component {
                 </div>)
                 }
             </React.Fragment>
+
         )
     }
 }
