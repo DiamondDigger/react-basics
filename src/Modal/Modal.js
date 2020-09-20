@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import './Modal.css'
 import Context from '../context'
 
+
 export default class Modal extends React.Component {
     state = {
         turnOn: false,

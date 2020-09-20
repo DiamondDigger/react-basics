@@ -1,6 +1,14 @@
 import React, {useContext, useState} from "react";
 import './Modal.css'
 import Context from "../context";
+import {Button} from "@material-ui/core";
+
+const styles = {
+    Button: {
+        display: 'block',
+        marginTop: '1rem',
+    }
+}
 
 function ModalFunctional(props) {
     console.log('props.title: ', props.title)
@@ -15,7 +23,7 @@ function ModalFunctional(props) {
 
     return (
         <React.Fragment>
-            <button onClick={() => setIsOpen(true)}> Open modal</button>
+            <Button variat='contained' color='primary' onClick={() => setIsOpen(true)}> Open modal</Button>
 
             {isOpen &&
             (<div className='modal'>
@@ -25,12 +33,15 @@ function ModalFunctional(props) {
 
                     <p>{info}</p>
                     <input type="text" onChange={(event) => setInfo(event.target.value)}/>
-                    <button onClick={() => {
-                        addTodo(title)
-                        setIsOpen(false)
+                    <Button variant='contained'
+                            color='secondary'
+                            style={styles.Button}
+                            onClick={() => {
+                                addTodo(title)
+                                setIsOpen(false)
 
-                    }}> Close modal
-                    </button>
+                            }}> Close modal
+                    </Button>
                 </div>
             </div>)}
         </React.Fragment>
